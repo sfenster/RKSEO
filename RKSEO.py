@@ -5,6 +5,7 @@ Created on Feb 18 2022
 '''
 
 import requests, time
+from multiprocessing.managers import State
 
 domain = "riskonnect.okta.com"
 username = "scott.fenstermaker@riskonnect.com"
@@ -34,6 +35,23 @@ def oktaMFAAuthenticate(r):
         raise SystemExit(e)
     return r
 
+def oauth2RetrieveSessionCookie(p, r, s):
+    try:
+        client_id = r.json()['_embedded']['client'][0]['id']
+        response_type = "id_token"
+        scope = "openid"
+        prompt = "none"
+        state = p.json()['stateToken']
+        redirect_uri="http%3A%2F%2Flocalhost%3A8080"
+        response_mode="form_post"
+        sessionToken = r.json()['sessionToken']
+        payload = {"stateToken":stateToken}
+        r = requests.post('https://' + domain + '/oauth2/v1/authorize', data=apayload) 
+    except requests.exceptions.RequestException as e:  
+        raise SystemExit(e)
+    return s
+
+
 def pretty_print_POST(req):
     """
     At this point it is completely built and ready
@@ -50,12 +68,17 @@ def pretty_print_POST(req):
         req.body,
     ))
 
+print("Sending primary authentication...")
 resp=oktaAuthenticate()
+print("RESPONSE...")
+print(resp.json())
 if resp.ok:
+    print("Sending MFA Push Notification...")
     mfaResp=oktaMFAAuthenticate(resp)
 
     while "factorResult" in mfaResp.json():
         if mfaResp.json()['factorResult'] == "WAITING":
+            print("Waiting...")
             time.sleep(1)
             mfaResp=oktaMFAAuthenticate(resp)
 
@@ -67,8 +90,15 @@ if mfaResp.ok:
     print (mfaResp.json())
     print("sessionToken = " + sessionToken)
 
+
+s = requests.Session()
+#oauth2RetrieveSessionCookie(resp, mfaResp, s)
+
+
 # Next - Create new session using sessionToken and OpenID endpoint, receive session cookie
 # Instructions here: https://developer.okta.com/docs/guides/session-cookie/main/
+
+
 
 
 # Log into RK Okta SSO, and open the proper Excel file
