@@ -1,0 +1,60 @@
+<script type="text/javascript">
+
+//Establish variables for the full email address, and then the domain segment
+var email = "%%email{js}%%";
+var domain = email.substring(email.lastIndexOf("@") +1);
+
+//Compare the email domain against the competitor list
+switch (domain)
+{
+   case "origamirisk.com":
+   case "archerirm.com":
+   case "bwise.com":
+   case "metricstream.com":
+   case "logicmanager.com":
+   case "logicgate.com":
+   case "lockpath.com":
+   case "ventivtech.com":
+   case "sai360.com":
+   case "saiglobal.com":
+   case "diligent.com":
+   case "wegalvanize.com":
+   case "servicenow.com":
+   case "workiva.com":
+   case "onetrust.com":
+   case "fusionrm.com":
+   case "auditboard.com":
+   case "reciprocity.com":
+   case "rldatix.com":
+   case "internationaldevelopers.net":
+   case "riskqual.com":
+   case "vergehealth.com":
+   case "claritygrp.com":
+   case "symplr.com":
+   case "pressganey.com":
+
+   {
+    //Redirect competitors to home page
+    document.getElementById("pardot-form").style.visibility = "hidden";
+    top.location="https://riskonnect.com/";
+    break;
+   }
+
+   default:
+   {
+      //Send Form-Completion message to iFrame parent page, for Google Tag Manager:
+       try {
+               parent.postMessage('Form-Completion', 'https://riskonnect.com');
+       } catch (e) {
+               //Log Error
+               window.console && window.console.log(e);
+       }
+
+       //FORM COMPLETION ACTION
+       //Form completion will redirect to, or serve, the URL below.
+       //Place two slashes (//) in front of the URL if you which to have no redirection.
+
+       top.location='https://www2.riskonnect.com/ExposureManagementEbook';
+   }
+}
+</script>
