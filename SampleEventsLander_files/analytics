@@ -1,0 +1,30 @@
+
+function piResponse() {
+		piSetCookie('visitor_id29712', '406329903', 3650);
+			piSetCookie('visitor_id29712-hash', '34bf896ff0f7e35d26845d7e15f7fcf03a8acac9eefe868bcffa88c006806daf4b6226aaaae3c48995c92c1bac1211cd5470aa36', 3650);
+		
+		if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+		var analytics_link = document.location.protocol + "//" + "www2.riskonnect.com/analytics?";
+		pi.tracker.visitor_id='406329903';
+
+				pi.tracker.visitor_id_sign='34bf896ff0f7e35d26845d7e15f7fcf03a8acac9eefe868bcffa88c006806daf4b6226aaaae3c48995c92c1bac1211cd5470aa36';
+		
+				pi.tracker.campaign_id='77048';
+		
+		var variables = 'conly=true';
+		for (property in pi.tracker) {
+					variables += "&" + property + "=" + encodeURIComponent(pi.tracker[property]);
+				}
+		var headID = document.getElementsByTagName("head")[0];
+		piScriptObj[piScriptNum] = document.createElement('script');
+		piScriptObj[piScriptNum].type = 'text/javascript';
+		piScriptObj[piScriptNum].src = analytics_link + variables;
+		headID.appendChild(piScriptObj[piScriptNum]);
+		piScriptObj[piScriptNum].onload = function() { return; }
+	}
+	}
+piResponse();
+
+
+
+

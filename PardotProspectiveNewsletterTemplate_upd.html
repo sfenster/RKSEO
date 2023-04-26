@@ -1,0 +1,942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
+<html lang="en" xmlns=http://www.w3.org/1999/xhtml xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- Disable auto-detection/styling of telephone numbers iOS -->
+  <meta name="viewport" content="width=device-width;" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Use latest (edge) version of IE rendering engine -->
+  <meta name="x-apple-disable-message-reformatting" content="width=device-width, initial-scale=1.0" />
+  <!-- Disable auto-scale in iOS 10 Mail -->
+  <title>Title </title> <!-- Shows in email notifications, like Android 4.4. -->
+
+  <!-- FOR USING WEB FONTS / @FONT-FACE -->
+  <!-- NOTE: If not using web fonts or @font-face then you can remove this section -->
+  <!-- Desktop Outlook does not like web font references and defaults to Times New Roman. Set a safe fallback font. -->
+  <!-- Windows 10 ignores inline "text-decoration: none;" - forced xy-reset here. -->
+  <!--[if mso]>
+    <style>
+                    body, table, tr, td, div, h1, h2, h3, h4, h5, h6, p, a {
+                                    font-family: Arial, sans-serif !important;
+                    }
+                    .nav-item a,
+                    .button a {
+                                    text-decoration: none !important;
+                    }
+    </style>
+                                <![endif]-->
+
+  <!--[if !mso]><!-->
+  <style>
+    @import url(‘https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap’);
+  </style>
+  <!--<![endif]-->
+  <!-- ********** END WEB FONTS AREA ************ -->
+
+  <!-- ***** Makes background images in 72ppi Outlook render at correct size. ****** -->
+  <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+  <!-- CSS xy-reset : BEGIN -->
+  <style type="text/css">
+    /* Remove spaces around the email design added by some email clients. */
+    /* Beware: It can remove the padding / Margin and add a background color to the compose a reply window. */
+    html,
+    body {
+      Margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+    /* Stop email clients from resizing small text. */
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    /* Centers email on Android 4.4 */
+    div[style*="Margin: 16px 0"] {
+      Margin: 0 !important;
+    }
+    /* Stops Outlook from adding extra spacing to tables. */
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+    /* Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      Margin: 0 auto !important;
+    }
+    table table table {
+      table-layout: auto;
+    }
+    /* Uses a better rendering method when resizing images in IE. */
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+    /* A work-around for email clients meddling in triggered links. */
+    *[x-apple-data-detectors],
+    /* iOS */
+    .x-gmail-data-detectors,
+    /* Gmail */
+    .x-gmail-data-detectors *,
+    .aBn {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+    /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
+    .a6S {
+      display: none !important;
+      opacity: 0.01 !important;
+    }
+    /* If the above doesn't work, add a .g-img class to any image in question. */
+    img.g-img+div {
+      display: none !important;
+    }
+    /* Prevents underlining the button text in Windows 10 */
+    .button-link {
+      text-decoration: none !important;
+    }
+    /* Removes right gutter in Gmail iOS app  */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+      /* iPhone 4 to X */
+      .email-container {
+        min-width: 270px !important;
+      }
+    }
+  </style>
+  <!-- CSS xy-reset : END -->
+
+  <!-- Mobile Styles : BEGIN -->
+  <style type="text/css">
+    /* Media Queries */
+    @media screen and (max-width: 639px) {
+      .email-container,
+      .email-container table {
+        width: 100% !important;
+        Margin: 0 auto !important;
+        float: none !important;
+        /** the align attribute on a table is similar to float on a div**/
+      }
+      .mobile-off {
+        width: 0 !important;
+        display: none !important;
+        height: 0 !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+      }
+      .mobile-on {
+        display: block !important;
+        height: auto !important;
+        line-height: inherit !important;
+        font-size: inherit !important;
+        max-height: inherit !important;
+      }
+      .mobile-center,
+      .mobile-center img {
+        text-align: center;
+        margin: 0 auto;
+      }
+      .mobile-left {
+        text-align: left !important;
+      }
+      .mobile-left .button {
+        float: none !important;
+        text-align: left !important;
+        margin: 0 !important;
+      }
+      .mobile-img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .email-container .button {
+        width: auto !important;
+      }
+      /** The background image url needs single quotes to work in Samsung Native Mail app **/
+      .mobile-background {
+        /*background-image: url('') !important; */
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        height: auto !important;
+        padding: 80px 20px !important;
+        ;
+      }
+      .xy-reset {
+        height: auto !important;
+        width: auto !important;
+        border: 0 !important;
+      }
+      .padding-reset {
+        padding: 0 !important;
+      }
+      .mobile-nav {
+        text-align: left !important;
+        display: block;
+        padding: 20px !important;
+        border-bottom: 2px solid #f2f2f2;
+        font-size: 16px !important;
+      }
+      .navigation:first-child {
+        border-top: 2px solid #f2f2f2;
+      }
+      .mobile-arrow {
+        display: inline-block !important;
+        height: 18px !important;
+        width: 10px !important;
+        line-height: 100% !important;
+        font-size: 16px !important;
+        float: right;
+      }
+    }
+  </style>
+  <!-- Mobile Styles : END -->
+</head>
+
+<!--***
+               
+                NOTES:
+               
+                • Width and height attribute repeated in inline styles, for Outlook 120 DPI and Windows 10 support.
+               
+                • If your email is long, and you see Outlook 2007 & 2010 breaking the columns in your email, Outlook is inserting a page break. Replace the commented mso td's that wrap the column tables with "ghost columns". Check out https://www.emailonacid.com/blog/article/email-development/using-ghost-columns-to-fix-alignment-problems-in-outlook/ for more info.
+               
+                               
+                ***-->
+
+<body bgcolor="#ffffff" style="Margin: 0; background-color: #ffffff ">
+  <center style="background-color: #f2f2f2;">
+    <!-- Preview text area. We could hide this but it may be hard to see where to edit in the Pardot editor view -->
+    <!-- Start table for border around entire email -->
+    <table align="center" cellpadding="0" cellspacing="0" class="email-container"
+      style="background-color: #f2f2f2f2; border: 0; width: 600px;" width="600">
+      <tbody>
+        <tr>
+          <td>
+            <!-- STart Preview text -->
+            <table align="center" cellpadding="5" cellspacing="0" class="email-container"
+              style="background-color: #f2f2f2; width: 600px;" width="600">
+              <tbody>
+                <tr style="">
+                  <td class="browser-view"
+                    style="padding:0px 18px 9px;color:#BEBCBC;font-family:  'Lato', Arial, sans-serif; font-size:12px; text-align: center;"
+                    valign="top" width="100%"><a href="{{View_Online}}" style="color:#404040" target="_blank">View in
+                      browser</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Email Header -->
+            <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+              class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+              <tbody>
+                <tr>
+                  <td align="center" bgcolor="#122644">
+                    <div pardot-region="header"><img alt="Riskonnection Newsletter"
+                        src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr7j/29712/1671638815IuZvdsJL/header.png
+                        style="width: 100%; max-width: 600px;" width="600"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" bgcolor=#12264;
+                    style="font-family: 'Lato', Arial, sans-serif; padding: 8px 30px 10px 30px; font-size: 14px; line-height: 100%; font-weight: 500;  color: #ffffff;">
+                    <div pardot-region="date">
+                      January 2023
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div pardot-repeatable="one-column-text">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto;  width:100%; max-width: 600px;"
+                width="600">
+                <tbody>
+                  <tr>
+                    <td>
+
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto;  width:100%; max-width:540px;"
+                        width="540">
+                        <tbody>
+
+                          <tr>
+                            <td align="left"
+                              style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 10px 0; font-size: 16px; line-height: 150%; font-weight: 300;   color: #404040;">
+                              <div pardot-region="section">
+                                <h2
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 5px 0; font-size: 15px; line-height: 100%; font-weight: 700; letter-spacing: 0.1px; color: #122644; ">
+                                  NEWS YOU CAN USE</h2>
+                                <div style="margin: 10px 0">
+                                  <hr
+                                    style="margin:10px 0; border-width: 0; background: #000; color: #122644; height:1px">
+                                </div>
+                              </div>
+
+                              <div pardot-region="body-copy">
+                                <h3
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                  Featured content item goes here</h3>
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                  officia deserunt mollit anim id est laborum.</p>
+                              </div>
+                              <div pardot-region="link"><a href=https://riskonnect.com
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 100%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">READ
+                                  MORE →</a>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <div pardot-repeatable="one-column-image-text">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td>
+
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                        <tbody>
+                          <tr>
+                            <td align="left">
+                              <div pardot-region="section">
+                                <h2
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 5px 0; font-size: 15px; line-height: 100%; font-weight: 700; letter-spacing: 0.1px; color: #122644; ">
+                                  RESOURCES TO EXPLORE
+                                </h2>
+                                <div style="margin: 10px 0">
+                                  <hr
+                                    style="margin:10px 0; border-width: 0; background: #000; color: #122644; height:1px">
+                                </div>
+                              </div>
+
+                            </td>
+                          </tr>
+                          <tr style="">
+                            <td pardot-region="image"><img alt="" border="0" height="201"
+                                src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr7m/29712/1671638885LndAMhLO/Image_1.png
+                                style="width: 100%; border-width: 0px; border-style: solid; padding-top:16px"></td>
+                          </tr>
+                          <tr>
+                          </tr>
+                          <tr>
+                            <td align="left">
+                              <div pardot-region="headline">
+                                <h3
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                  Additional content item goes here</h3>
+
+                              </div>
+
+                              <div pardot-region="body-copy">
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                  officia deserunt mollit anim id est laborum.</p>
+
+                              </div>
+                              <div pardot-region="link" style="margin: 16px 0 0 0;">
+                                <!--CTA-->
+                                <a href=https://riskonnect.com
+                                  style="background-color: #e26b2b; font-size: 14px; font-family: 'Lato', Arial, sans-serif; font-weight:900; text-decoration: none; padding: 8px 16px; color: #ffffff; letter-spacing: .5px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span
+                                    style="mso-text-raise:15pt;">DOWNLOAD NOW
+                                  </span><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%">&nbsp;</i><![endif]--></a>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div pardot-repeatable="two-equal-columns">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td>
+
+                      <!-- Columns: Begin -->
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <!-- Left Column : BEGIN -->
+                              <table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                style="Margin: auto; width: 255px;" width="255">
+                                <tbody>
+                                  <tr style="">
+                                    <td pardot-region="left-image"><a href=https://riskonnect.com /><img alt=""
+                                        border="0"
+                                        src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr8q/29712/1671639028VHqDItJo/Image_2.png
+                                        style="width: 100%; border-width: 0px; border-style: solid;"></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" style="padding: 0;">
+                                      <div pardot-region="headline">
+                                        <h3
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                          Additional content item goes here</h3>
+
+                                      </div>
+
+                                      <div pardot-region="body-copy">
+                                        <p
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+
+                                      </div>
+
+                                      <div pardot-region="link"><a href=https://riskonnect.com
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 100%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">READ
+                                          MORE →</a>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- Left Column : END -->
+                              <!-- Spacer Column : BEGIN -->
+                              <!--[if mso]></td><td><![endif]-->
+
+                              <table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                style="Margin: auto; width: 30px;" width="30">
+                                <tbody>
+                                  <tr>
+                                    <td style="font-size: 20px; line-height: 30px;" width="30">&nbsp;</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- Spacer Column : END -->
+                              <!-- Right Column : BEGIN -->
+                              <!--[if mso]></td><td><![endif]-->
+
+                              <table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                style="Margin: auto; width: 255px;" width="255">
+                                <tbody>
+                                  <tr style="">
+                                    <td pardot-region="right-image"><a href=https://riskonnect.com /><img alt=""
+                                        border="0"
+                                        src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr8t/29712/1671639057TtcvZHgU/Image_3.png
+                                        style="width: 100%; border-width: 0px; border-style: solid;"></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" style="0 ">
+                                      <div pardot-region="headline">
+                                        <h3
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                          Additional content item goes here</h3>
+
+                                      </div>
+
+                                      <div pardot-region="body-copy">
+                                        <p
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+
+                                      </div>
+
+                                      <div pardot-region="link"><a href=https://riskonnect.com
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 100%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">READ
+                                          MORE →</a>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- Right Column : END -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+
+
+            <div pardot-repeatable="one-column-image-text">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td>
+
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                        <tbody>
+                          <tr>
+                            <td align="left">
+                              <div pardot-region="section">
+                                <h2
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 5px 0; font-size: 15px; line-height: 100%; font-weight: 700; letter-spacing: 0.1px; color: #122644; ">
+                                  WEBINARS WORTH YOUR WHILE
+                                  <div style="margin: 10px 0">
+                                    <hr
+                                      style="margin:10px 0; border-width: 0; background: #000; color: #122644; height:1px">
+                                  </div>
+                              </div>
+
+                            </td>
+                          </tr>
+                          <tr style="">
+                            <td pardot-region="image"><img alt="" border="0" height="201"
+                                src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr7t/29712/1671638988ZyISYTZ7/Image_4.png
+                                style="width: 100%; border-width: 0px; border-style: solid; padding-top:16px"></td>
+                          </tr>
+                          <tr>
+                          <tr>
+                          </tr>
+                          <tr>
+                            <td align="left"
+                              style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                              <div pardot-region="headline">
+                                <h3
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 16px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                  Horizon Scanning and Emerging Risks</h3>
+
+                              </div>
+
+                              <div pardot-region="featured">
+
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 700; color: #404040">
+                                  October 20 at 1:00 p.m. ET | Earn 1 CPE Credit</p>
+
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                  In an increasingly volatile and unpredictable world, how can risk managers proactively
+                                  identify emerging risks?.</p>
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                  <b>Dr. Ariane Chapelle,</b> CEO of Chapelle Consulting, will identify various ways to
+                                  characterize and address emerging risks using a structured approach to address complex
+                                  realities.
+                                </p>
+
+                              </div>
+                              <div pardot-region="link" style="margin: 16px 0 32px 0;">
+                                <!--CTA-->
+                                <a href=https://riskonnect.com
+                                  style="background-color: #e26b2b; font-size: 14px; font-family: 'Lato', Arial, sans-serif; font-weight:900; text-decoration: none; padding: 8px 16px; color: #ffffff; letter-spacing: .5px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span
+                                    style="mso-text-raise:15pt;">REGISTER NOW
+                                  </span><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%">&nbsp;</i><![endif]--></a>
+                              </div>
+                              <div pardot-repeatable="one-column-text">
+                                <div pardot-region="body-copy">
+                                  <h3
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                    Title of additional webinar goes here
+                                  </h3>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div pardot-region="link"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 100%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">REGISTER
+                                    NOW →</a>
+                                </div>
+                                <div pardot-region="body-copy">
+                                  <h3
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                    Title of additional webinar goes here
+                                  </h3>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div pardot-region="link"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 100%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">REGISTER
+                                    NOW →</a>
+                                </div>
+
+
+                              </div>
+
+
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div pardot-repeatable="one-column-text">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td>
+
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                        <tbody>
+
+                          <tr>
+                            <td align="left"
+                              style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 10px 0; font-size: 16px; line-height: 150%; font-weight: 300;   color: #404040;">
+                              <div pardot-region="section">
+                                <h2
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 5px 0; font-size: 15px; line-height: 100%; font-weight: 700; letter-spacing: 0.1px; color: #122644; ">
+                                  MEET US HERE</h2>
+                                <div style="margin: 10px 0">
+                                  <hr
+                                    style="margin:10px 0; border-width: 0; background: #000; color: #122644; height:1px">
+                                </div>
+                              </div>
+
+                              <div pardot-region="body-copy">
+
+                                <p
+                                  style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                  Riskonnect has a full calendar of events coming up. Swing by our booth and say hi – or
+                                  follow the links below to schedule a meeting with us.
+                                </p>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">DAFITC
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    August 29 - 31&nbsp;&nbsp;|&nbsp;&nbsp;Montgomery, AL </p>
+                                </div>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">CIR
+                                    Roundtable
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    September 14&nbsp;&nbsp;|&nbsp;&nbsp;London, UK
+                                  </p>
+                                </div>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">Chicagoland
+                                    Risk Forum
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    September 22&nbsp;&nbsp;|&nbsp;&nbsp;Chicago, IL
+                                  </p>
+                                </div>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">RIMS
+                                    Western Regional
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    October 3 - 5&nbsp;&nbsp;|&nbsp;&nbsp;Long Beach, CA</p>
+                                </div>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">FERMA
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    October 9 - 11&nbsp;&nbsp;|&nbsp;&nbsp;Copenhagen, Denmark
+                                  </p>
+                                </div>
+                                <div pardot-region="event"><a href=https://riskonnect.com
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 16px 0 0 0; font-size: 15px; line-height: 150%; font-weight: 900; color:#e26b2b; letter-spacing: 0.5px; text-decoration:none;">CeFPro
+                                    ESG USA
+                                  </a>
+                                  <p
+                                    style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                    October 18 - 19&nbsp;&nbsp;|&nbsp;&nbsp;New York, NY
+                                  </p>
+                                </div>
+
+
+                              </div>
+
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div pardot-repeatable="one-column-image-text">
+              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="30" cellspacing="0"
+                class="email-container" role="presentation" style="Margin: auto; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                        cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <table align="center" aria-hidden="true" bgcolor="#ffffff" border="0" cellpadding="0"
+                                cellspacing="0" role="presentation" style="Margin: auto; width: 540px;" width="540">
+                                <tbody>
+                                  <tr>
+                                    <td align="left">
+                                      <div pardot-region="section">
+                                        <h2
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 5px 0; font-size: 15px; line-height: 100%; font-weight: 700; letter-spacing: 0.1px; color: #122644; ">
+                                          NEWSFLASH: PRODUCT NAME
+                                        </h2>
+                                        <div style="margin: 10px 0">
+                                          <hr
+                                            style="margin:10px 0; border-width: 0; background: #000; color: #122644; height:1px">
+                                        </div>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+                                  <tr style="">
+                                    <td pardot-region="image"><img alt="" border="0" height="201"
+                                        src=https://www2.riskonnect.com/l/29712/2022-12-21/9ngr7q/29712/1671638917E1lGrHiM/Image_5.png
+                                        style="width: 100%; border-width: 0px; border-style: solid; padding-top:16px">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                  </tr>
+                                  <tr>
+                                    <td align="left">
+                                      <div pardot-region="headline">
+                                        <h3
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 24px 0 8px 0; font-size: 26px; line-height: 120%; font-weight: 300; color: #404040">
+                                          Title of product newsflash goes here
+                                        </h3>
+
+                                      </div>
+
+                                      <div pardot-region="body-copy">
+                                        <p
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 16x; line-height: 150%; font-weight: 300; color: #404040 ">
+                                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                          in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                                      </div>
+                                      <div pardot-region="link" style="margin: 16px 0;">
+                                        <!--CTA-->
+                                        <a href=https://riskonnect.com
+                                          style="background-color: #e26b2b; font-size: 14px; font-family: 'Lato', Arial, sans-serif; font-weight:900; text-decoration: none; padding: 8px 16px; color: #ffffff; letter-spacing: .5px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span
+                                            style="mso-text-raise:15pt;">LEARN
+                                            MORE</span><!--[if mso]><i style="letter-spacing: .5px;mso-font-width:-100%">&nbsp;</i><![endif]--></a>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- FOOTER -->
+
+            <div>
+              <table border="0" cellpadding="0" cellspacing="0" class="email-container"
+                style=" background-color:  #122644; width: 600px;" width="600">
+                <tbody>
+                  <tr>
+                    <td height="20" valign="top">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <table border="0" cellpadding="0" cellspacing="0" class="email-container" style=" width: 600px;"
+                        width="600">
+                        <tbody>
+                          <tr>
+                            <td style="width: 30px;" width="30">&nbsp;</td>
+                            <td>
+                              <!-- FOOTER CONTENT -->
+                              <table border="0" cellpadding="10" cellspacing="0" class="email-container"
+                                style="background-color:  #122644; width: 540px;" width="540">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <!-- SOCIAL MEDIA LINKS -->
+                                      <table align="center" border="0" cellpadding="0" cellspacing="0"
+                                        class="email-container"
+                                        style="background-color:#122644; width: 130px; max-width: 130px;" width="130">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" style="width:33%;"><a
+                                                href=https://www.facebook.com/riskonnect target="_blank"><img
+                                                  alt="facebook"
+                                                  src=http://www2.riskonnect.com/l/29712/2019-07-29/8mktj6/29712/215203/facebook.png
+                                                  style="border: 0px initial ;  margin: 0px 10px 0px 0px;"> </a></td>
+                                            <td align="center" style="width:33%;"><a href=https://twitter.com/Riskonnect
+                                                target="_blank"><img alt="twitter"
+                                                  src=http://www2.riskonnect.com/l/29712/2019-07-29/8mktj8/29712/215205/twitter.png
+                                                  style="border: 0px;  margin: 0px 10px 0px 0px;"> </a></td>
+                                            <td align="center" style="width:33%;"><a
+                                                href=https://www.linkedin.com/company/230463 target="_blank"><img
+                                                  alt="linkedIn"
+                                                  src=http://www2.riskonnect.com/l/29712/2019-07-29/8mktj2/29712/215199/linkedin.png
+                                                  style="border: 0px ; margin: 0px 10px 0px 0px;"> </a></td>
+
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- /social-media -->
+                                    </td>
+                                  </tr>
+                                  <tr style="">
+                                    <td pardot-region="address">
+                                      <p style="display: none; font-size: 0px; max-height: 0; line-height: 0;"><br>
+                                        Riskonnect<br>
+                                        1701 Barrett Lakes Blvd., Suite 500<br>
+                                        Kennesaw, GA 30144</p>
+
+                                      <p
+                                        style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 8px 0; font-size: 12px; line-height: 150%; font-weight: 500; color: #ffffff; text-align: center;">
+                                        1701 Barrett Lakes Blvd., Suite 500<br>
+                                        Kennesaw, GA 30144</p>
+                                      <p
+                                        style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 12px; line-height: 150%; font-weight: 500; color: #ffffff; text-align: center;">
+                                        <a href=http://riskonnect.com
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 12px; line-height: 150%; font-weight: 500; color: #ffffff; text-align: center; text-decoration: none">www.riskonnect.com</a>
+                                      </p>
+                                    </td>
+                                  </tr>
+
+                                  <!-- /footer-content -->
+                                </tbody>
+                              </table>
+                            </td>
+                            <td style=" background-color: #122644; width: 30px;" width="30">&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /footer -->
+            <!-- ====== SUB FOOTER ======== -->
+
+            <div>
+              <table border="0" cellpadding="0" cellspacing="0" class="email-container"
+                style="background-color: #122644; width: 600px; border-top: 0" width="600">
+                <tbody>
+                  <tr>
+                    <td valign="top">
+                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="email-container"
+                        style="width: 600px;" width="600">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <table border="0" cellpadding="0" cellspacing="0" class="email-container"
+                                style="padding-top:5px;padding-right:0px;padding-bottom:5px;padding-left:0px; background-color:  #122644; height: 25px; width: 600px;"
+                                width="600">
+                                <tbody>
+                                  <tr style="">
+                                    <td style="width: 30px;" width="30">&nbsp;</td>
+                                    <td pardot-region="copyright">
+                                      <p
+                                        style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 10px; line-height: 150%; font-weight: 500; color: #ffffff; text-align: center;">
+                                        {{{dynamic_content_2121}}}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{Unsubscribe}}"
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 10px; line-height: 150%; font-weight: 500; color: #ffffff; text-decoration: none">Unsubscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                                          href="{{EmailPreferenceCenter}}"
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 10px; line-height: 150%; font-weight: 500; color: #ffffff; text-decoration: none">
+                                          Update Subscription Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                                          href=https://riskonnect.com/about-us/company/privacy-policy/
+                                          style="font-family: 'Lato', Arial, sans-serif; Margin: 0 0 16px 0; font-size: 10px; line-height: 150%; font-weight: 500; color: #ffffff; text-decoration: none">Privacy
+                                          Policy</a></p>
+                                    </td>
+                                    <td style="width: 30px;" width="30">&nbsp;</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /sub-footer -->
+            <!--[if gte mso 9]>
+                            </v:textbox>
+                        </v:rect>
+                        <![endif]-->
+            <!-- Gmail Fix : START (Forces Desktop view on Android and Gmail Apps where responsive design is not supported.) -->
+
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-off"
+              style="width: 600; Margin: 0;" width="600">
+              <tbody>
+                <tr>
+                  <td class="mobile-off" height="1"
+                    style="mso-line-height-rule: exactly; line-height: 1px; min-width: 600px;"><img alt=""
+                      class="mobile-off" height="1"
+                      src=http://www2.riskonnect.com/l/29712/2017-04-11/6hmrxq/29712/133883/spacer.jpg
+                      style="display: block; max-height: 1px; min-height: 1px; min-width: 600px; width: 600px;"
+                      width="600"></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Gmail Fix : END -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- /END TABLE BORDER -->
+  </center>
+</body>
+</html>
